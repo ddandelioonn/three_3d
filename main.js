@@ -42,18 +42,6 @@ scene.add(spotLight);
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); 
 scene.add(ambientLight);
 
-// Создание пола
-const groundGeometry = new THREE.PlaneGeometry(20, 20, 30, 30);
-groundGeometry.rotateX(-Math.PI / 2);
-const groundMaterial = new THREE.MeshStandardMaterial({
-  color: 0x555555,
-  side: THREE.DoubleSide
-});
-const groundMesh = new THREE.Mesh(groundGeometry, groundMaterial);
-groundMesh.castShadow = false;
-groundMesh.receiveShadow = true;
-scene.add(groundMesh);
-
 // Загрузка 3D модели LeePerrySmith.glb
 let model = null;
 const loader = new GLTFLoader().setPath('models/'); // Путь к папке с моделью
